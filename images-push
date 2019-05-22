@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for F in `find -name Dockerfile`;
+do
+    D=`dirname $F`;
+    echo docker image push natural/`basename $D`:latest;
+done | sh

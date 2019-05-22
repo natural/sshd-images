@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for F in `find -name Dockerfile`; 
+do 
+   D=`dirname $F`; 
+   echo docker build -t natural/`basename $D`:latest -f $F .;
+done | sh
